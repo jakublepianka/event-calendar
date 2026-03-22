@@ -3,42 +3,42 @@ import { CalendarWeek } from "./CalendarWeek";
 export function Calendar({ date, events }) {
   const year = date.getFullYear();
   const month = date.getMonth();
-  const weekdays = [
+  const weekdayNames = [
     "MON", "TUE", "WED",
     "THU", "FRI", "SAT", "SUN"
   ];
-  const calendar = buildCalendar(year, month);
+  const weeks = buildCalendar(year, month);
 
   function buildCalendar(year, month) {
-    const firstDay = new Date(year, month, 1);
-    const startDay = (firstDay.getDay() + 6) % 7;
-    const monthLength = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1);
+    const startWeekdayIndex = (firstDayOfMonth.getDay() + 6) % 7;
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    const days = [
-      ...Array(startDay).fill(null),
-      ...Array.from({ length: monthLength }, (_, i) => i + 1),
+    const calendarDays = [
+      ...Array(startWeekdayIndex).fill(null),
+      ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
     ];
 
-    const weeks = [];
+    const calendarWeeks = [];
 
-    for (let i = 0; i < days.length; i += 7) {
-      weeks.push(days.slice(i, i + 7));
+    for (let i = 0; i < calendarDays.length; i += 7) {
+      calendarWeeks.push(calendarDays.slice(i, i + 7));
     }
 
-    const lastWeek = weeks[weeks.length - 1];
-    while (lastWeek.length < 7) {
-      lastWeek.push(null);
+    const lastCalendarWeek = calendarWeeks[calendarWeeks.length - 1];
+    while (lastCalendarWeek.length < 7) {
+      lastCalendarWeek.push(null);
     }
 
-    return weeks;
+    return calendarWeeks;
   }
 
   return (
     <>
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', rowGap: '16px'}}>
-      { weekdays.map((dayName, i) => <div key={i} style={{border: '1px solid black', textAlign: 'center'}}>{dayName}</div>)}
-      {Array.from({ length: calendar.length }).map((day, i) => {
-        return <CalendarWeek key={i} year={year} month={month} week={calendar[i]}></CalendarWeek>;
+      { weekdayNames.map((dayName, dayIndex) => <div key={dayIndex} style={{border: '1px solid black', textAlign: 'center'}}>{dayName}</div>)}
+      {Array.from({ length: weeks.length }).map((_, weekIndex) => {
+        return <CalendarWeek key={weekIndex} year={year} month={month} week={weeks[weekIndex]} events={events}></CalendarWeek>;
       })}
       </div>
     </>
