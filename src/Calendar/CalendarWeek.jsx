@@ -5,16 +5,15 @@ export function CalendarWeek({ week, events }) {
     <>
       {week.map((day, dayIndex) => {
         const paddedDay = (day + 100).toString().slice(1);
-        const dayEvents = events.filter(event => {
+        const dayEvents = events.filter((event) => {
           return event.dateVenue.slice(-2) === paddedDay;
-        })
+        });
         return (
-          <div
+          <CalendarDay
             key={dayIndex}
-            style={{ border: "1px solid black", textAlign: "center" }}
-          >
-            <CalendarDay dayNum={day} events={dayEvents}></CalendarDay>
-          </div>
+            dayNum={day}
+            events={dayEvents}
+          ></CalendarDay>
         );
       })}
     </>
