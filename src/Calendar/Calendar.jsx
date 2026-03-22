@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { CalendarGrid } from "./CalendarGrid";
-import { data } from "../../data.json"
+import { Link } from "react-router";
+import { useOutletContext } from "react-router";
 
 export function Calendar() {
-  const allEvents = data; 
+  const { events: allEvents} = useOutletContext();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const selectedDateString = selectedDate.toISOString().slice(0, 10);
   const monthlyEvents = allEvents.filter(event => { 
@@ -13,14 +14,14 @@ export function Calendar() {
   })
   function onDateChange(event) {
     if (!event) return;
-    setSelectedDate(new Date(event.target.value))
+    const newDate = new Date(event.target.value);
+    setSelectedDate(newDate);
   };
-
   return (
     <>
       <label htmlFor="date">Choose desired month </label>
       <input type="date" name="monthYear" id="date" onChange={onDateChange} value={selectedDateString}/>
-      
+      <Link to="add-event">Add new event</Link>
       <CalendarGrid date={selectedDate} events={monthlyEvents} />
     </>
   );

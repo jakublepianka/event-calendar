@@ -1,6 +1,8 @@
 import { Calendar } from "./Calendar/Calendar.jsx";
 import { EventDetails } from "./Details/EventDetails.jsx";
 import App from "./App";
+import { EventForm } from "./Form/EventForm.jsx";
+
 
 const routes = [
   {
@@ -8,6 +10,7 @@ const routes = [
     element: <App />,
     children: [
       {
+        index: true,
         path: "",
         element: <Calendar />,
       },
@@ -15,6 +18,10 @@ const routes = [
         path: "details/:event",
         element: <EventDetails />,
       },
+      {
+        path: "add-event",
+        element: <EventForm />
+      }
     ],
   },
 ];
