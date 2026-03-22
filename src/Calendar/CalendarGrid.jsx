@@ -1,12 +1,10 @@
 import { CalendarWeek } from "./CalendarWeek";
+import styles from "./CalendarGrid.module.css";
 
 export function CalendarGrid({ date, events }) {
   const year = date.getFullYear();
   const month = date.getMonth();
-  const weekdayNames = [
-    "MON", "TUE", "WED",
-    "THU", "FRI", "SAT", "SUN"
-  ];
+  const weekdayNames = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   const weeks = buildCalendar(year, month);
 
   function buildCalendar(year, month) {
@@ -35,11 +33,25 @@ export function CalendarGrid({ date, events }) {
 
   return (
     <>
-      <div style={{display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', rowGap: '16px'}}>
-      { weekdayNames.map((dayName, dayIndex) => <div key={dayIndex} style={{border: '1px solid black', textAlign: 'center'}}>{dayName}</div>)}
-      {Array.from({ length: weeks.length }).map((_, weekIndex) => {
-        return <CalendarWeek key={weekIndex} year={year} month={month} week={weeks[weekIndex]} events={events}></CalendarWeek>;
-      })}
+      <div className={styles.weekdayNames}>
+        {weekdayNames.map((dayName, dayIndex) => (
+          <div className={styles.weekday} key={dayIndex}>
+            {dayName}
+          </div>
+        ))}
+      </div>
+      <div className={styles.calendarGrid}>
+        {Array.from({ length: weeks.length }).map((_, weekIndex) => {
+          return (
+            <CalendarWeek
+              key={weekIndex}
+              year={year}
+              month={month}
+              week={weeks[weekIndex]}
+              events={events}
+            ></CalendarWeek>
+          );
+        })}
       </div>
     </>
   );

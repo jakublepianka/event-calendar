@@ -1,0 +1,21 @@
+.weekdayNames {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  color: #FFFFFF;
+  background-color: #00003C;
+}
+
+.weekday {
+  padding: 4px;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background-color: #F1EFFF;
+}
