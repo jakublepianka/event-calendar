@@ -1,0 +1,43 @@
+.calendarDay {
+  min-height: 50px;
+  background-color: #FFFFFF;
+}
+
+.dayNum {
+  margin: 1px 4px;
+  color: #5E5E5E;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.eventList {
+  display: grid;
+  list-style: none;
+  margin: 4px;
+  gap: 4px;
+}
+
+.eventItem {
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px;
+  background-color: #F1EFFF;
+  border-radius: 4px;
+}
+
+.eventItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #E00000;
+  border-radius: 8px 0 0 8px;
+}
+
+.detailsLink {
+  text-decoration: none;
+  color: black;
+}
