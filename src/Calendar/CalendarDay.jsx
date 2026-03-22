@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function CalendarDay({ dayNum, events }) {
   return (
     <>
@@ -18,6 +20,12 @@ export function CalendarDay({ dayNum, events }) {
                 <p>
                   {homeTeamAbbrev} vs {awayTeamAbbrev}
                 </p>
+                <Link
+                  to={`/details/${event.dateVenue}-${homeTeamAbbrev}-${awayTeamAbbrev}-${event.timeVenueUTC}`}
+                  state={{ event }}
+                >
+                  See details
+                </Link>
               </li>
             );
           })}
