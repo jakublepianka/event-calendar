@@ -1,0 +1,46 @@
+.calendarNav {
+  padding: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #E00000;
+}
+
+.addEventLink {
+  text-decoration: none;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.calendarControls {
+  padding: 8px;
+  display: grid;
+  gap: 8px;
+  margin: 8px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.calendarControls>label {
+  color: #690000;
+  font-weight: 600;
+  text-align: center;
+}
+
+.calendarControls>input {
+  background-color: #F1EFFF;
+  border: 1px solid #FF8A78;
+  border-radius: 8px;
+  padding: 2px;
+  min-width: 200px;
+}
+
+.calendarContent {
+  margin: 8px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
