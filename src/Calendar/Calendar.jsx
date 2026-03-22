@@ -2,11 +2,16 @@ import { useState } from "react";
 import { CalendarGrid } from "./CalendarGrid";
 import { Link } from "react-router";
 import { useOutletContext } from "react-router";
+import { useSearchParams } from "react-router";
 import styles from "./Calendar.module.css";
 
 export function Calendar() {
   const { events: allEvents } = useOutletContext();
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [searchParams, setSearchParams] = useSearchParams();
+  const dateParam = searchParams.get("date");
+  const [selectedDate, setSelectedDate] = useState(
+    dateParam ? new Date(dateParam + "-01") : new Date(),
+  );
   const selectedDateString = selectedDate.toISOString().slice(0, 10);
   const monthlyEvents = allEvents.filter((event) => {
     const eventMonthString = event.dateVenue.slice(0, -3);
@@ -17,6 +22,7 @@ export function Calendar() {
     if (!event) return;
     const newDate = new Date(event.target.value);
     setSelectedDate(newDate);
+    setSearchParams({ date: newDate.toISOString().slice(0, 7) });
   }
   return (
     <>
