@@ -19,3 +19,11 @@ body {
 a {
   color: black
 }
+
+input {
+  background-color: #F1EFFF;
+  border: 1px solid #FF8A78;
+  border-radius: 8px;
+  padding: 2px;
+  height: 2rem;
+}
