@@ -26,7 +26,7 @@ export function EventDetails() {
             <div className={styles.homeTeam}>
               <p>{match.homeTeam ? `${match.homeTeam.officialName}` : "N/A"}</p>
               <p className={styles.teamAbbr}>
-                <span>{match.homeTeam.abbreviation}</span>
+                <span>{match.homeTeam?.abbreviation || "N/A"}</span>
               </p>
             </div>
             <div className={styles.matchStatus}>
@@ -40,7 +40,7 @@ export function EventDetails() {
             <div className={styles.awayTeam}>
               <p>{match.awayTeam ? `${match.awayTeam.officialName}` : "N/A"}</p>
               <p className={styles.teamAbbr}>
-                <span>{match.awayTeam.abbreviation}</span>
+                <span>{match.awayTeam?.abbreviation || "N/A"}</span>
               </p>
             </div>
           </section>
