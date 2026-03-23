@@ -52,7 +52,7 @@ export function EventForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setEvents((prev) => [...prev, match]);
-    navigate("/");
+    navigate(`/?date=${match.dateVenue.slice(0,7)}`);
   };
 
   return (

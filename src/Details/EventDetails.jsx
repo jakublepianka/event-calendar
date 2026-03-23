@@ -1,9 +1,12 @@
 import { useLocation } from "react-router";
+import { Link } from "react-router";
 
 export function EventDetails(){
   const location = useLocation();
   const match = location.state.event;
   return (
+    <>
+    <Link to={`/?date=${match.dateVenue.slice(0,7)}`}>Back to calendar</Link>
     <div
       style={{
         border: "1px solid #ccc",
@@ -59,5 +62,6 @@ export function EventDetails(){
         </p>
       )}
     </div>
+    </>
   );
 }
