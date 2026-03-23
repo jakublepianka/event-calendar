@@ -1,0 +1,143 @@
+  .formNav {
+    display: grid;
+    align-items: center;
+  }
+
+  .backLink {
+    text-decoration: none;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .linkFiller {
+    background-color: #E00000;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+  }
+
+  .eventForm {
+    box-sizing: border-box;
+    display: grid;
+
+  }
+
+  .eventFormInside {
+    background-color: #FFFFFF;
+    display: grid;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .eventFormInside h2, .eventFormInside h3 {
+    text-align: center;
+    margin: 8px 0 0;
+  }
+
+
+
+  .eventForm button {
+    cursor: pointer;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #E00000;
+    border: none;
+    padding: 16px;
+  }
+
+  .eventFormGeneralInfo {
+    display: grid;
+    justify-content: center;
+  }
+
+  fieldset {
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  .eventFormSpecificInfo {
+    display: grid;
+    justify-content: center;
+  }
+
+  .eventFormInside label {
+    display: block;
+    margin-top: 4px;
+    min-width: 150px;
+  }
+
+  .eventFormInside input {
+    display: block;
+    margin-top: 2px;
+    width: clamp(150px, 90%, 250px);
+  }
+
+  fieldset label {
+    padding-top: 8px;
+  }
+
+  fieldset label:last-child {
+    padding-bottom: 8px;
+  }
+
+  @media (min-width: 600px) {
+    .formNav {
+      position: relative;
+    }
+
+    .backLink {
+      margin: 8px auto;
+      width: 434px;
+    }
+
+    .linkFiller {
+      display: grid;
+      align-items: center;
+      border-radius: 8px;
+      padding: 0;
+      min-height: 69px;
+      max-width: 434px;
+    }
+
+    .linkFiller:hover {
+      border: 2px solid #E00000;
+      background-color: #FFFFFF;
+      color: black;
+    }
+
+    .eventForm {
+      justify-content: center;
+    }
+
+    .eventFormInside {
+      width: 434px;
+    }
+
+    .eventForm button {
+      min-height: 69px;
+      max-width: 434px;
+      border-radius: 8px;
+      margin: 8px auto;
+      min-width: 434px;
+    }
+
+
+    .eventForm button:hover {
+      border: 2px solid #E00000;
+      background-color: #FFFFFF;
+      color: black;
+    }
+  }
