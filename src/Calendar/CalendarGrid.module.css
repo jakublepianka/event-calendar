@@ -19,3 +19,9 @@
   gap: 2px;
   background-color: #F1EFFF;
 }
+
+@media (min-width: 600px) {
+  .weekday {
+    font-size: 20px;
+  }
+}
