@@ -30,7 +30,7 @@ export function Calendar() {
         <header className={styles.calendarHeader}>
           <nav className={styles.calendarNav}>
             <Link to="add-event" className={styles.addEventLink}>
-              Create event
+              <div className={styles.linkFiller}>Create event</div>
             </Link>
           </nav>
 

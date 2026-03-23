@@ -1,17 +1,19 @@
-.calendarNav {
-  padding: 16px;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: #E00000;
-}
-
 .addEventLink {
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 600;
   color: #FFFFFF;
   font-size: 18px;
   text-align: center;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.linkFiller {
+  background-color: #E00000;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
 }
 
 .calendarControls {
@@ -43,4 +45,51 @@
   border-radius: 8px;
   background-color: #FFFFFF;
   overflow: hidden;
+}
+
+@media (min-width: 600px) {
+
+  .calendarHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .calendarNav {
+    display: grid;
+    position: relative;
+    align-items: center;
+    min-height: 100%;
+  }
+  .addEventLink {
+    display: grid;
+    min-height: 100%;
+    padding: 8px;
+  }
+
+  .linkFiller {
+    display: grid;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0;
+  }
+
+  .linkFiller:hover {
+    border: 2px solid #E00000;
+    background-color: #FFFFFF;
+    color: black;
+  }
+
+  .calendarContent {
+    max-width: 884px;
+    margin: 8px;
+  }
+}
+
+@media (min-width: 900px) {
+  .calendarContent {
+    margin: auto;
+  }
 }

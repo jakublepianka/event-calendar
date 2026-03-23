@@ -18,12 +18,19 @@
 }
 
 .eventItem {
+  cursor: pointer;
   position: relative;
   font-size: 12px;
   text-align: center;
   padding: 4px;
   background-color: #F1EFFF;
+  color: black;
   border-radius: 4px;
+}
+
+.eventItem p {
+  width: 100%;
+  height: 100%;
 }
 
 .eventItem::before {
@@ -39,5 +46,37 @@
 
 .detailsLink {
   text-decoration: none;
-  color: black;
+}
+
+@media (min-width: 600px) {
+  .dayNum {
+    margin: 2px 4px;
+    font-size: 16px;
+  }  
+
+  .eventItem {
+    font-size: 16px;
+    padding: 8px 4px;
+  }
+
+  .eventItem:hover p {
+    color: #FFFFFF;
+  }
+
+  .eventItem:hover {
+    background-color: #E00000;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dayNum {
+    margin: 2px 4px;
+    font-size: 16px;
+  }  
+
+  .eventItem {
+    font-size: 16px;
+    padding: 8px;
+  }
 }
