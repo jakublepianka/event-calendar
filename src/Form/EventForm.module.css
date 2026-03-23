@@ -35,12 +35,11 @@
     width: 100%;
   }
 
-  .eventFormInside h2, .eventFormInside h3 {
+  .eventFormInside h2,
+  .eventFormInside h3 {
     text-align: center;
     margin: 8px 0 0;
   }
-
-
 
   .eventForm button {
     cursor: pointer;
