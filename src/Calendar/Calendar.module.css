@@ -42,6 +42,7 @@
 
 .calendarContent {
   margin: 8px;
+  margin-bottom: 16px;
   border-radius: 8px;
   background-color: #FFFFFF;
   overflow: hidden;
@@ -84,12 +85,11 @@
 
   .calendarContent {
     max-width: 884px;
-    margin: 8px;
   }
 }
 
 @media (min-width: 900px) {
   .calendarContent {
-    margin: auto;
+    margin: 8px auto 16px;
   }
 }
