@@ -1,0 +1,144 @@
+.detailsNav {
+  display: grid;
+  align-items: center;
+}
+
+.details {
+  display: block;
+}
+
+.backLink {
+  text-decoration: none;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.linkFiller {
+  background-color: #E00000;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+}
+
+.matchCard {
+  display: grid;
+  margin: 8px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 900px;
+}
+
+.competitionHeader {
+  text-align: center;
+  padding: 8px 0;
+  color: #00003C;
+}
+
+.scoreBoard {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  background-color: #00003C;
+  color: #FFFFFF;
+  padding: 16px 0;
+}
+
+.scoreBoard p {
+  text-align: center;
+}
+
+.homeTeam,
+.awayTeam {
+  display: grid;
+  padding: 0px 8px;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+
+}
+
+.homeTeam p,
+.awayTeam p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.homeTeam .teamAbbr,
+.awayTeam .teamAbbr {
+  color: #FFEDEA;
+  letter-spacing: 1px;
+  text-indent: 1px;
+  font-weight: 900;
+  font-size: 14px;
+  height: fit-content;
+}
+
+.teamAbbr span {
+  background-color: #E00000;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.score {
+  min-width: 80px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.date {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+@media (min-width: 600px) {
+  .backLink {
+    margin: 8px auto;
+    width: 434px;
+  }
+
+  .linkFiller {
+    display: grid;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0;
+    min-height: 69px;
+    max-width: 434px;
+  }
+
+  .linkFiller:hover {
+    border: 2px solid #E00000;
+    background-color: #FFFFFF;
+    color: black;
+  }
+
+  .scoreBoard {
+    min-height: 150px;
+    align-items: center;
+  }
+
+  .homeTeam p,
+  .awayTeam p {
+    font-size: 20px;
+  }
+
+  .score {
+    font-size: 48px;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+
+
+}
+
+@media (min-width: 900px) {
+  .matchCard {
+    margin: 8px auto 16px;
+  }
+
+}
