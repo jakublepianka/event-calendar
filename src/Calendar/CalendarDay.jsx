@@ -9,12 +9,8 @@ export function CalendarDay({ dayNum, events }) {
         {events.length > 0 && (
           <ul className={styles.eventList}>
             {events.map((event, eventIndex) => {
-              const homeTeamAbbrev = event.homeTeam
-                ? event.homeTeam.abbreviation
-                : "N/A";
-              const awayTeamAbbrev = event.awayTeam
-                ? event.awayTeam.abbreviation
-                : "N/A";
+              const homeTeamAbbrev = event.homeTeam?.abbreviation || "N/A";
+              const awayTeamAbbrev = event.awayTeam?.abbreviation || "N/A";
 
               return (
                 <li className={styles.eventItem} key={eventIndex}>
