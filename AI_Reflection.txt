@@ -1,0 +1,9 @@
+# AI Usage Reflection
+
+- I used AI to come up with clear and descriptive commit messages that follow good practices, which helped keep my version control history neat and informative.
+- AI helped me set up the basic HTML and JSX structure for the EventForm component, including the form fields and layout, which sped up the initial coding.
+- I relied on AI to write and polish the README.md file, covering things like the project overview, how to install it, and design choices, making the docs more professional than I could have done alone.
+- AI guided me in changing the plain div-based layout in EventDetails to use semantic HTML like article and header, which improved the code's readability and accessibility.
+- I looked to AI for ideas inspired by Google's Material Design (Stitch), especially for colors and layouts, which gave me a good starting point for the overall look of the app.
+- I tried using AI a couple of times to fix CSS issues, but it didn't really help, so I ended up debugging manually and figuring it out myself.
+- I used AI as quick documentation check for the use of search parameters in React Router, particularly for managing the date in the URL and making navigation work smoothly in the calendar.
